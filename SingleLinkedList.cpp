@@ -19,12 +19,14 @@ SingleLinkedList<T>::SingleLinkedList(initializer_list<T> __l)
 }
 
 template<class T>
-SingleLinkedList<T>::SingleLinkedList(const SingleLinkedList & sll){
+SingleLinkedList<T>::SingleLinkedList(const SingleLinkedList & sll)
+{
 
     Head=NULL;
 
     Node<T>*temp=sll.Head;
-    while(temp!=NULL){
+    while(temp!=NULL)
+    {
 
         this->Insert(temp->get_value());
         temp=temp->get_next();
@@ -33,7 +35,8 @@ SingleLinkedList<T>::SingleLinkedList(const SingleLinkedList & sll){
 }
 
 template<class T>
-void SingleLinkedList<T>:: Sort(){
+void SingleLinkedList<T>:: Sort()
+{
 
     const int size = this->Count();
     T arr[size];
@@ -52,6 +55,68 @@ void SingleLinkedList<T>:: Sort(){
     }
 
 }
+
+template<class T>
+T SingleLinkedList<T>:: back()
+{
+
+    try
+    {
+
+
+        if(Head==NULL)
+        {
+            throw "Empty list exception";
+        }
+        else
+        {
+            Node<T>*temp=Head;
+            while(temp->get_next()!=NULL)
+            {
+                temp=temp->get_next();
+            }
+            return temp->get_value();
+        }
+
+    }
+    catch(const char* msg)
+    {
+
+        cout<<msg<<endl;
+        return 0;
+
+    }
+}
+
+
+template<class T>
+T SingleLinkedList<T>:: front()
+{
+
+    try
+    {
+
+
+        if(Head==NULL)
+        {
+            throw "Empty list exception";
+        }
+        else
+        {
+            Node<T>*temp=Head;
+            return temp->get_value();
+        }
+    }
+    catch(const char* msg)
+    {
+
+        cout<<msg<<endl;
+        return 0;
+
+    }
+
+}
+
 
 
 
@@ -180,6 +245,53 @@ SingleLinkedList<T>::~SingleLinkedList()
     }
 
 }
+template <class T>
+bool SingleLinkedList<T>:: Search(T val)
+{
+
+    Node<T>*temp=Head;
+    while(temp!=NULL)
+    {
+        if(temp->get_value()==val) return true;
+        temp = temp->get_next();
+    }
+    return false;
+
+}
+template <class T>
+bool SingleLinkedList<T>:: remove(T val)
+{
+
+    Node<T>*temp=Head;
+    if(temp->get_value()==val)
+    {
+        Head=Head->get_next();
+        delete temp;
+        return true;
+    }
+    else
+    {
+        Node<T>*prev=NULL;
+        while(temp!=NULL)
+        {
+            if(temp->get_value()==val)
+            {
+                prev->set_next(temp->get_next());
+                delete temp;
+                return true;
+
+            }
+            else
+            {
+                prev=temp;
+            }
+            temp = temp->get_next();
+        }
+    }
+    return false;
+
+}
+
 
 
 template class SingleLinkedList<int>;

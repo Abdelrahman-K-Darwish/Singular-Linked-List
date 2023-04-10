@@ -15,3 +15,19 @@
 1681116441 d:\code blocks - cpp projects\data structures\singlelinkedlist.h
 	"Node.H"
 
+1681081504 source:d:\code blocks - cpp projects\singular linked list\node.cpp
+	"Node.H"
+
+1681079605 d:\code blocks - cpp projects\singular linked list\node.h
+	<bits/stdc++.h>
+
+1681127415 source:d:\code blocks - cpp projects\singular linked list\singlelinkedlist.cpp
+	"SingleLinkedList.H"
+
+1681119925 d:\code blocks - cpp projects\singular linked list\singlelinkedlist.h
+	"Node.H"
+
+1681127495 source:d:\code blocks - cpp projects\singular linked list\main.cpp
+	<iostream>
+	"SingleLinkedList.H"
+

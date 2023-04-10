@@ -9,23 +9,24 @@ template<class T>
 class SingleLinkedList
 {
 public:
+
     ///default constructor
     SingleLinkedList();
     ///parameterized constructor with a list
     SingleLinkedList(initializer_list<T> __l);
     ///parameterized constructor with an array
     template <std::size_t N>
-    SingleLinkedList(const T(&arr)[N]){
+    SingleLinkedList(const T(&arr)[N])
+    {
         int size = this->array_size(arr);
         Head=NULL;
-        for(int i=0;i<size;i++){
+        for(int i=0; i<size; i++)
+        {
             this->Insert(arr[i]);
         }
     }
     ///sort function using an array
     void Sort();
-
-
     ///Copy constructor
     SingleLinkedList(const SingleLinkedList &);
     ///destructor
@@ -44,7 +45,18 @@ public:
     void Reverse();
 
     template <std::size_t N>
-    constexpr std::size_t array_size(const T(&)[N]){ return N; }
+    constexpr std::size_t array_size(const T(&)[N])
+    {
+        return N;
+    }
+    ///Get the last element
+    T back();
+    ///Get the first element
+    T front();
+    ///Searches for an element
+    bool Search(T val);
+    ///removes an element
+    bool remove(T val);
 
     ///cout operator overloading
     template<class U>
