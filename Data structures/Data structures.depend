@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1681116380 source:d:\code blocks - cpp projects\data structures\main.cpp
+	<iostream>
+	"SingleLinkedList.H"
+
+1681079605 d:\code blocks - cpp projects\data structures\node.h
+	<bits/stdc++.h>
+
+1681081504 source:d:\code blocks - cpp projects\data structures\node.cpp
+	"Node.H"
+
+1681116546 source:d:\code blocks - cpp projects\data structures\singlelinkedlist.cpp
+	"SingleLinkedList.H"
+
+1681116441 d:\code blocks - cpp projects\data structures\singlelinkedlist.h
+	"Node.H"
+
